@@ -1,4 +1,4 @@
-package com.example.ufc_proyecto.ui.theme
+package Pantallas
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -73,8 +73,8 @@ fun StoreContent(navController: NavController) {
             // First Button: Training Plans
             StoreButton(
                 imageRes = R.drawable.nate,
-                text = "Training Plans",
-                onClick = { /* Handle click for Training Plans */ }
+                text = "Principiante",
+                onClick = { navController.navigate("Pantalla_ejercicios1") }
             )
 
             Spacer(modifier = Modifier.height(16.dp))
@@ -82,7 +82,7 @@ fun StoreContent(navController: NavController) {
             // Second Button: Supplements Plan
             StoreButton(
                 imageRes = R.drawable.mcgregor,
-                text = "Supplements Plan",
+                text = "Intermedio",
                 onClick = { /* Handle click for Supplements Plan */ }
             )
 
@@ -91,7 +91,7 @@ fun StoreContent(navController: NavController) {
             // Third Button: Diet Plan
             StoreButton(
                 imageRes = R.drawable.cuadrilatero,
-                text = "Diet Plan",
+                text = "Avanzado",
                 onClick = { /* Handle click for Diet Plan */ }
             )
 
@@ -100,7 +100,7 @@ fun StoreContent(navController: NavController) {
             // Fourth Button: Meal Plan
             StoreButton(
                 imageRes = R.drawable.jon,
-                text = "Meal Plan",
+                text = "Profesional",
                 onClick = { /* Handle click for Meal Plan */ }
             )
         }
@@ -122,7 +122,7 @@ fun TopBar() {
             contentDescription = "UFC Logo",
             modifier = Modifier
                 .size(40.dp) // Tamaño explícito para la imagen
-                .offset(25.dp) // Larger logo size
+                .offset(40.dp) // Larger logo size
         )
 
         // Icons (Bell and User) on the right with extra space
@@ -131,7 +131,7 @@ fun TopBar() {
         ) {
             IconButton(onClick = { /* Handle Bell Icon Click */ }) {
                 Icon(
-                    painter = painterResource(id = R.drawable.logocampana),
+                    painter = painterResource(id = R.drawable.notificar),
                     contentDescription = "Bell Icon",
                     modifier = Modifier.size(30.dp), // Tamaño explícito del icono
                     tint = Color.Black

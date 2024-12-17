@@ -1,4 +1,4 @@
-package com.example.ufc_proyecto.ui.theme
+package Pantallas
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image

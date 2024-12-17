@@ -1,11 +1,15 @@
 package com.example.ufc_proyecto.ui.theme
 
-import LoginScreen
+import Pantallas.Pantalla1Content
+import Pantallas.Pantalla2
+import Pantallas.StoreContent
+import Pantallas_Ejercicios.EjercicioScreen
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.ufc_proyecto.PantallaInicio
+import com.example.ufc_finalproyect.ui.theme.LoginScreen
+import Principal.PantallaInicio
 
 @Composable
 fun ClassNavigator(navHostController: NavHostController) {
@@ -35,7 +39,10 @@ fun ClassNavigator(navHostController: NavHostController) {
 
         // Pantalla 4 (Pantalla a la que se redirige después de un login exitoso)
         composable("Pantalla4") {
-            Pantalla4(navHostController)  // Componente de la Pantalla4
+            StoreContent(navHostController)  // Componente de la Pantalla4
+        }
+        composable("Pantalla_ejercicios1") {
+            EjercicioScreen(navHostController)  // Componente de la Pantalla4
         }
     }
 }

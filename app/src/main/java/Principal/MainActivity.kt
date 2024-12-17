@@ -1,4 +1,4 @@
-package com.example.ufc_proyecto
+package Principal
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -26,6 +26,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.example.ufc_proyecto.R
 import com.example.ufc_proyecto.ui.theme.ClassNavigator
 
 class MainActivity : ComponentActivity() {
@@ -58,7 +59,7 @@ fun PantallaInicio(navController: NavController) {
 
         // Imagen en el centro de la pantalla
         Image(
-            painter = painterResource(id = R.drawable.ufc), // Asegúrate de tener la imagen ufc en res/drawable
+            painter = painterResource(id = R.drawable.israfondo), // Asegúrate de tener la imagen ufc en res/drawable
             contentDescription = "UFC Logo",
             modifier = Modifier
                 .align(Alignment.Center) // Centrar la imagen
