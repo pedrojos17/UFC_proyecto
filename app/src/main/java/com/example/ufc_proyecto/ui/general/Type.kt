@@ -1,4 +1,4 @@
-package com.example.ufc_proyecto.ui.theme
+package com.example.ufc_proyecto.ui.general
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

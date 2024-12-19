@@ -1,8 +1,9 @@
-package com.example.ufc_proyecto.ui.theme
+package navigator
 
 import Pantallas.Pantalla1Content
 import Pantallas.Pantalla2
 import Pantallas.StoreContent
+import Pantallas_Ejercicios.Ejercicio_p
 //import Pantallas_Ejercicios.EjercicioScreen
 //import Pantallas_Ejercicios.Pantalla_ejercicios2
 import androidx.compose.runtime.Composable
@@ -42,9 +43,9 @@ fun ClassNavigator(navHostController: NavHostController) {
         composable("Pantalla4") {
             StoreContent(navHostController)  // Componente de la Pantalla4
         }
-//        composable("Pantalla_ejercicios1") {
-//            EjercicioScreen(navHostController)  // Componente de la Pantalla4
-//        }
+        composable("Ejercicios_Principiantes") {
+            Ejercicio_p(navHostController)  // Componente de la Pantalla4
+        }
 //        composable("Pantalla_ejercicios2") {
 //            Pantalla_ejercicios2(navHostController)  // Componente de la Pantalla4
 //        }

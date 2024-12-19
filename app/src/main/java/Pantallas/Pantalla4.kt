@@ -74,7 +74,7 @@ fun StoreContent(navController: NavController) {
             StoreButton(
                 imageRes = R.drawable.nate,
                 text = "Principiante",
-                onClick = { navController.navigate("Pantalla_ejercicios1") }
+                onClick = { navController.navigate("Ejercicios_Principiantes") }
             )
 
             Spacer(modifier = Modifier.height(16.dp))
