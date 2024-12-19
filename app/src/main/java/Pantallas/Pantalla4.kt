@@ -83,7 +83,7 @@ fun StoreContent(navController: NavController) {
             StoreButton(
                 imageRes = R.drawable.mcgregor,
                 text = "Intermedio",
-                onClick = { /* Handle click for Supplements Plan */ }
+                onClick = { navController.navigate("Pantalla_ejercicios2") }
             )
 
             Spacer(modifier = Modifier.height(16.dp))

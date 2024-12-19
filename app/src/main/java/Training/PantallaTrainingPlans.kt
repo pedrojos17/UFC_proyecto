@@ -79,11 +79,11 @@ fun TrainingPlanScreen(navController: NavController) {
         )
 
         // Lista de planes de entrenamiento (con imágenes y textos)
-        TrainingPlanButton(
-            imageRes = R.drawable.golpeo, // Reemplaza con la imagen golpeoSaco.jpg
-            title = "Principiant",
-            onClick = { navController.navigate("Pantalla1") } // Redirige a Pantalla1
-        )
+//        TrainingPlanButton(
+//            imageRes = R.drawable.golpeo, // Reemplaza con la imagen golpeoSaco.jpg
+//            title = "Principiant",
+//            onClick = { navController.navigate("Pantalla1") } // Redirige a Pantalla1
+//        )
         Spacer(modifier = Modifier.height(16.dp))
 
         TrainingPlanButton(
