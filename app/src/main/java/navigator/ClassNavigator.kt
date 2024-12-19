@@ -3,9 +3,8 @@ package navigator
 import Pantallas.Pantalla1Content
 import Pantallas.Pantalla2
 import Pantallas.StoreContent
+import Pantallas_Ejercicios.EjercicioI
 import Pantallas_Ejercicios.Ejercicio_p
-//import Pantallas_Ejercicios.EjercicioScreen
-//import Pantallas_Ejercicios.Pantalla_ejercicios2
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -46,8 +45,8 @@ fun ClassNavigator(navHostController: NavHostController) {
         composable("Ejercicios_Principiantes") {
             Ejercicio_p(navHostController)  // Componente de la Pantalla4
         }
-//        composable("Pantalla_ejercicios2") {
-//            Pantalla_ejercicios2(navHostController)  // Componente de la Pantalla4
-//        }
+        composable("Ejercicios_Intermedio") {
+            EjercicioI(navHostController)  // Componente de la Pantalla4
+        }
     }
 }
