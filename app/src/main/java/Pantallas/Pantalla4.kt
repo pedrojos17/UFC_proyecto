@@ -92,7 +92,7 @@ fun StoreContent(navController: NavController) {
             StoreButton(
                 imageRes = R.drawable.cuadrilatero,
                 text = "Avanzado",
-                onClick = { /* Handle click for Diet Plan */ }
+                onClick = {navController.navigate("Ejercicios_Avanzados")}
             )
 
             Spacer(modifier = Modifier.height(16.dp))
