@@ -101,7 +101,7 @@ fun StoreContent(navController: NavController) {
             StoreButton(
                 imageRes = R.drawable.jon,
                 text = "Profesional",
-                onClick = { /* Handle click for Meal Plan */ }
+                onClick = {navController.navigate("Ejercicios_Profesional")}
             )
         }
     }

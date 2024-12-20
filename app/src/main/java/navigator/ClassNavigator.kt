@@ -4,6 +4,7 @@ import Pantallas.Pantalla1Content
 import Pantallas.Pantalla2
 import Pantallas.StoreContent
 import Pantallas_Ejercicios.EjercicioI
+import Pantallas_Ejercicios.EjercicioProfesional
 import Pantallas_Ejercicios.Ejercicio_p
 import Pantallas_Ejercicios.EjerciciosA
 import androidx.compose.runtime.Composable
@@ -51,6 +52,9 @@ fun ClassNavigator(navHostController: NavHostController) {
         }
         composable("Ejercicios_Avanzados") {
             EjerciciosA(navHostController)  // Componente de la Pantalla4
+        }
+        composable("Ejercicios_Profesional") {
+            EjercicioProfesional(navHostController)  // Componente de la Pantalla4
         }
     }
 }

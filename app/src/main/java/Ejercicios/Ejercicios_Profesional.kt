@@ -22,29 +22,29 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.ufc_proyecto.R
 
-class Pantalla_ejerciciosAvanzado : ComponentActivity() {
+class Ejercicios_Profesionales : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            EjerciciosA(navController = rememberNavController())  // Llamamos a la pantalla de ejercicios
+            EjercicioProfesional(navController = rememberNavController())
         }
     }
 }
 
 @Composable
-fun EjerciciosA(navController: NavController) {
-    // Lista de ejercicios para un usuario avanzado
+fun EjercicioProfesional(navController: NavController) {
+    // Ejercicios orientados a un usuario de nivel profesional (MMA)
     val ejercicios = listOf(
-        mapOf("nombre" to "Combinación de Ganchos y Croches", "repeticiones" to 150, "series" to 4),
-        mapOf("nombre" to "Patadas circulares y Patadas frontales", "repeticiones" to 100, "series" to 5),
-        mapOf("nombre" to "Rodillazos al saco", "repeticiones" to 80, "series" to 4),
-        mapOf("nombre" to "Derribo de doble pierna", "repeticiones" to 50, "series" to 4),
-        mapOf("nombre" to "Golpes en sombra combinados", "repeticiones" to 100, "series" to 5),
-        mapOf("nombre" to "Combinación de Uppercuts y Patadas bajas", "repeticiones" to 90, "series" to 4),
-        mapOf("nombre" to "Brazos en guardia y desplazamiento lateral", "repeticiones" to 60, "series" to 3),
-        mapOf("nombre" to "Clinches y derribos de pie", "repeticiones" to 40, "series" to 4),
-        mapOf("nombre" to "Patadas altas y saltos de pierna", "repeticiones" to 70, "series" to 4),
-        mapOf("nombre" to "Combinación de Boxeo completo", "repeticiones" to 120, "series" to 5)
+        mapOf("nombre" to "Combinación de Ganchos, Uppercuts y Patadas", "repeticiones" to 200, "series" to 5),
+        mapOf("nombre" to "Patadas circulares altas", "repeticiones" to 150, "series" to 5),
+        mapOf("nombre" to "Rodillazos al saco con desplazamiento", "repeticiones" to 120, "series" to 4),
+        mapOf("nombre" to "Derribo de doble pierna con resistencia", "repeticiones" to 100, "series" to 4),
+        mapOf("nombre" to "Boxeo de pie con desplazamiento", "repeticiones" to 150, "series" to 5),
+        mapOf("nombre" to "Combinación 1-2-3 y 4-5-6", "repeticiones" to 180, "series" to 6),
+        mapOf("nombre" to "Combinación de Patadas Frontales y Bajas", "repeticiones" to 120, "series" to 5),
+        mapOf("nombre" to "Clinches, movimientos y derribos", "repeticiones" to 60, "series" to 4),
+        mapOf("nombre" to "Sombra de boxeo con movimientos laterales", "repeticiones" to 100, "series" to 4),
+        mapOf("nombre" to "Golpes rápidos en sombra", "repeticiones" to 150, "series" to 5)
     )
 
     var currentExerciseIndex by remember { mutableStateOf(0) }
@@ -90,10 +90,10 @@ fun EjerciciosA(navController: NavController) {
             Box(
                 modifier = Modifier
                     .align(Alignment.Center)
-                    .fillMaxWidth(0.9f) // Ajuste el ancho del recuadro
-                    .height(300.dp) // Ajuste el alto del recuadro
-                    .background(Color.White.copy(alpha = 0.7f), shape = RoundedCornerShape(16.dp))
-                    .padding(24.dp) // Aumente el padding para mayor espacio
+                    .fillMaxWidth(0.9f) // Aumenté el ancho de la caja
+                    .height(300.dp) // Aumenté el alto de la caja
+                    .background(Color.White.copy(alpha = 0.8f), shape = RoundedCornerShape(16.dp)) // Un poco más opaca
+                    .padding(30.dp) // Aumenté el padding para mayor espacio
             ) {
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally,
@@ -199,6 +199,6 @@ fun EjerciciosA(navController: NavController) {
 
 @Preview(showBackground = true)
 @Composable
-fun AvanzadoPreview() {
-    EjerciciosA(navController = rememberNavController())
+fun EjerciciosP() {
+    EjercicioProfesional(navController = rememberNavController())
 }
