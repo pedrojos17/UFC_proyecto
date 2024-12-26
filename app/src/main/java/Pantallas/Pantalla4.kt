@@ -5,17 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.offset
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -52,56 +42,52 @@ fun StoreContent(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.White)
+            .background(Color.White) // Fondo blanco de la pantalla
     ) {
-        // App Bar
+        // Barra superior con logo e iconos
         TopBar()
 
-        // Store title
+        // Título de la sección "Store"
         Text(
             text = "Store",
             style = TextStyle(fontSize = 30.sp, fontWeight = FontWeight.Bold),
             modifier = Modifier
-                .padding(top = 40.dp).offset(40.dp)
+                .padding(top = 40.dp)
+                .offset(40.dp)
         )
 
-        // Buttons with images
+        // Botones con imágenes para las opciones
         Column(
-            modifier = Modifier
-                .padding(16.dp)
+            modifier = Modifier.padding(16.dp)
         ) {
-            // First Button: Training Plans
             StoreButton(
                 imageRes = R.drawable.nate,
                 text = "Principiante",
-                onClick = { navController.navigate("Ejercicios_Principiantes") }
+                onClick = { navController.navigate("Ejercicios_Principiantes") } // Navega a ejercicios principiantes
             )
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Second Button: Supplements Plan
             StoreButton(
                 imageRes = R.drawable.mcgregor,
                 text = "Intermedio",
-                onClick = { navController.navigate("Ejercicios_Intermedio") }
+                onClick = { navController.navigate("Ejercicios_Intermedio") } // Navega a ejercicios intermedios
             )
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Third Button: Diet Plan
             StoreButton(
                 imageRes = R.drawable.cuadrilatero,
                 text = "Avanzado",
-                onClick = {navController.navigate("Ejercicios_Avanzados")}
+                onClick = { navController.navigate("Ejercicios_Avanzados") } // Navega a ejercicios avanzados
             )
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Fourth Button: Meal Plan
             StoreButton(
                 imageRes = R.drawable.jon,
                 text = "Profesional",
-                onClick = {navController.navigate("Ejercicios_Profesional")}
+                onClick = { navController.navigate("Ejercicios_Profesional") } // Navega a ejercicios profesionales
             )
         }
     }
@@ -112,44 +98,42 @@ fun TopBar() {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .height(50.dp), // Añade un tamaño fijo para las imágenes
+            .height(50.dp), // Altura fija para la barra superior
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
     ) {
-        // Logo Image on the left (larger size)
+        // Logo del lado izquierdo
         Image(
             painter = painterResource(id = R.drawable.ufc),
             contentDescription = "UFC Logo",
             modifier = Modifier
-                .size(40.dp) // Tamaño explícito para la imagen
-                .offset(40.dp) // Larger logo size
+                .size(40.dp) // Tamaño del logo
+                .offset(40.dp) // Espaciado desde el borde izquierdo
         )
 
-        // Icons (Bell and User) on the right with extra space
+        // Iconos de notificaciones y usuario en la derecha
         Row(
-            modifier = Modifier.padding(end = 20.dp) // Adding padding to separate from right edge
+            modifier = Modifier.padding(end = 20.dp) // Espaciado desde el borde derecho
         ) {
-            IconButton(onClick = { /* Handle Bell Icon Click */ }) {
+            IconButton(onClick = { /* Acción del icono de notificación */ }) {
                 Icon(
                     painter = painterResource(id = R.drawable.notificar),
                     contentDescription = "Bell Icon",
-                    modifier = Modifier.size(30.dp), // Tamaño explícito del icono
+                    modifier = Modifier.size(30.dp), // Tamaño del icono
                     tint = Color.Black
                 )
             }
-            IconButton(onClick = { /* Handle User Icon Click */ }) {
+            IconButton(onClick = { /* Acción del icono de usuario */ }) {
                 Icon(
                     painter = painterResource(id = R.drawable.avatar1),
                     contentDescription = "User Icon",
-                    modifier = Modifier.size(30.dp), // Tamaño explícito del icono
+                    modifier = Modifier.size(30.dp), // Tamaño del icono
                     tint = Color.Black
                 )
             }
         }
     }
 }
-
-
 
 @Composable
 fun StoreButton(imageRes: Int, text: String, onClick: () -> Unit) {
@@ -158,36 +142,34 @@ fun StoreButton(imageRes: Int, text: String, onClick: () -> Unit) {
         modifier = Modifier
             .fillMaxWidth()
             .height(160.dp) // Altura del botón
-            .padding(bottom = 16.dp), // Espacio entre los botones
+            .padding(bottom = 16.dp), // Espaciado entre botones
         shape = RoundedCornerShape(16.dp),
-        colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent) // Fondo transparente para el botón
+        colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent) // Fondo transparente
     ) {
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .background(Color.Transparent) // Fondo transparente para el botón
+                .background(Color.Transparent) // Fondo transparente
         ) {
             Image(
                 painter = painterResource(id = imageRes),
                 contentDescription = "Store Image",
                 modifier = Modifier
                     .fillMaxSize() // La imagen ocupa todo el botón
-                    .clip(RoundedCornerShape(16.dp)), // Bordes redondeados para la imagen
-                contentScale = androidx.compose.ui.layout.ContentScale.Crop // La imagen cubre todo el botón
+                    .clip(RoundedCornerShape(16.dp)), // Bordes redondeados
+                contentScale = androidx.compose.ui.layout.ContentScale.Crop // La imagen se ajusta al tamaño del botón
             )
             Text(
                 text = text,
                 style = TextStyle(color = Color.White, fontSize = 24.sp, fontWeight = FontWeight.Bold),
                 modifier = Modifier
-                    .align(Alignment.BottomStart) // Alinea el texto en la parte inferior izquierda
-                    .padding(16.dp) // Padding del texto
+                    .align(Alignment.BottomStart) // Texto en la parte inferior izquierda
+                    .padding(16.dp) // Espaciado del texto
             )
         }
     }
 }
 
-
-// Preview for the screen
 @Preview(showBackground = true)
 @Composable
 fun StorePreview() {

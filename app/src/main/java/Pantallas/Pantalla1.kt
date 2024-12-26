@@ -3,17 +3,7 @@ package Pantallas
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.offset
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -22,6 +12,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -39,19 +30,22 @@ fun Pantalla1Content(navController: NavController) {
             .fillMaxSize()
             .background(Color(0xFF111111)) // Fondo oscuro
     ) {
+        // Imagen de fondo que ocupa toda la pantalla
         Image(
-            painter = painterResource(id = R.drawable.lyotomachida), // Asegúrate de tener la imagen en res/drawable
+            painter = painterResource(id = R.drawable.lyotomachida),
             contentDescription = "Background",
             modifier = Modifier.fillMaxSize(),
-            contentScale = androidx.compose.ui.layout.ContentScale.Crop
+            contentScale = ContentScale.Crop
         )
 
+        // Contenedor principal con los elementos
         Column(
             verticalArrangement = Arrangement.Top,
             modifier = Modifier.fillMaxSize()
         ) {
-            Spacer(modifier = Modifier.weight(60f)) // Espacio para el título
+            Spacer(modifier = Modifier.weight(60f)) // Espacio para empujar el título hacia abajo
 
+            // Título principal
             Text(
                 text = "Training",
                 color = Color.White,
@@ -59,6 +53,7 @@ fun Pantalla1Content(navController: NavController) {
                 modifier = Modifier.offset(15.dp)
             )
 
+            // Descripción del contenido
             Text(
                 text = "KnockoutFit enhances your fighting skills and endurance through high-intensity training.",
                 color = Color.White,
@@ -66,6 +61,7 @@ fun Pantalla1Content(navController: NavController) {
                 modifier = Modifier.padding(top = 10.dp).offset(15.dp)
             )
 
+            // Puntos decorativos como separación
             Row(
                 horizontalArrangement = Arrangement.Start,
                 modifier = Modifier
@@ -79,15 +75,16 @@ fun Pantalla1Content(navController: NavController) {
                 )
             }
 
-            Spacer(modifier = Modifier.weight(1f))
+            Spacer(modifier = Modifier.weight(1f)) // Espacio para empujar los botones hacia abajo
 
+            // Botones para "Log In" y "Sign In"
             Row(
                 horizontalArrangement = Arrangement.Center,
                 modifier = Modifier.fillMaxWidth().padding(bottom = 45.dp)
             ) {
                 Button(
                     onClick = {
-                        navController.navigate("Pantalla2")  // Navega a Pantalla2
+                        navController.navigate("Pantalla2") // Navega a Pantalla2
                     },
                     shape = RoundedCornerShape(50.dp),
                     colors = ButtonDefaults.buttonColors(containerColor = Color.White),
@@ -105,7 +102,7 @@ fun Pantalla1Content(navController: NavController) {
 
                 OutlinedButton(
                     onClick = {
-                        navController.navigate("Pantalla2")  // Navega a Pantalla2
+                        navController.navigate("Pantalla2") // También navega a Pantalla2
                     },
                     shape = RoundedCornerShape(50.dp),
                     border = BorderStroke(1.dp, Color.White),
@@ -128,6 +125,6 @@ fun Pantalla1Content(navController: NavController) {
 @Preview(showSystemUi = true, showBackground = true)
 @Composable
 fun Pantalla1Preview() {
-    val fakeNavController = rememberNavController() // Controlador de navegación falso para la vista previa
+    val fakeNavController = rememberNavController() // Controlador falso para la vista previa
     Pantalla1Content(navController = fakeNavController)
 }
